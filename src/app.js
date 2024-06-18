@@ -46,29 +46,31 @@ function render(variables = {}) {
   </div>
 
   <div class="absolute left-0 right-0 top-[35%] flex flex-row justify-center">
-    <img src="https://randomuser.me/api/portraits/men/44.jpg"
-    class="h=32 w-32 rounded-full border-8 border-white"/>
-    </div>
+    <img src="${
+      variables.avatarURL
+    }" class="h-32 w-32 rounded-full border-8 border-white" />
+  </div>
+</div>
 
     <div class="absolute left-full top-10 ml-px flex flex-col gap-[1px]">
       ${
         variables.twitter 
-        ? `<a href="https://twitter.com/${variables.twitter}" class="rounded bg-cyan-500 p-1.5 text-white"><i class="fa-brands fa-twitter"></i></a>
+        ? `<a href="https://twitter.com/${variables.twitter}" class="rounded bg-cyan-500 p-1.5 text-white"><i class="fa-brands fa-twitter"></i></a>`
         : ""
       }
       ${
         variables.github
-        ? `<a href="https://github.com/${variables.github}" class="rounded bg-cyan-500 p-1.5 text-white"><i class="fa-brands fa-github"></i></a>
+        ? `<a href="https://github.com/${variables.github}" class="rounded bg-cyan-500 p-1.5 text-white"><i class="fa-brands fa-github"></i></a>`
         : ""
       }  
       ${
         variables.linkedin
-        ? `<a href="https://linkedin.com/school/${variables.linkedin}" class="rounded bg-cyan-500 p-1.5 text-white"><i class="fa-brands fa-linkedin"></i></a>
+        ? `<a href="https://linkedin.com/school/${variables.linkedin}" class="rounded bg-cyan-500 p-1.5 text-white"><i class="fa-brands fa-linkedin"></i></a>`
         : ""
       }
       ${
         variables.instagram
-        ? `<a href="https://instagram.com/${4geeksacademy}" class="rounded bg-cyan-500 p-1.5 text-white"><i class="fa-brands fa-instagram"></i></a>
+        ? `<a href="https://instagram.com/${4geeksacademy}" class="rounded bg-cyan-500 p-1.5 text-white"><i class="fa-brands fa-instagram"></i></a>`
         : ""
       }
     </div>
