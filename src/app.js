@@ -30,19 +30,50 @@ function render(variables = {}) {
   if (variables.includeCover == false) cover = "<div class='cover'></div>";
 
   // reset the website body with the new html output
-  document.querySelector("#widget_content").innerHTML = `<div class="widget">
-            ${cover}
-          <img src="${variables.avatarURL}" class="photo" />
-          <h1>Josh Miller</h1>
-          <h2>Designer</h2>
-          <h3>Los Angeles, USA</h3>
-          <ul class="position-right">
-            <li><a href="https://twitter.com/4geeksacademy"><i class="fa-brands fa-square-twitter"></i>"></i></a></li>
-            <li><a href="https://github.com/4geeksacademy"><i class="<i class="fa-brands fa-square-github"></i>"></i></a></li>
-            <li><a href="https://linkedin.com/school/4geeksacademy"><i class="fa-brands fa-linkedin"></i>"></i></a></li>
-            <li><a href="https://instagram.com/4geeksacademy"><i class="fa-brands fa-square-instagram"></i>"></i></a></li>
-          </ul>
-        </div>
+  document.querySelector("#widget_content").innerHTML = `
+  <div class="relative m-auto mt-8 flex h-[450px] w-[350px] flex-col rounded-xl bg-white shadow">
+  <div class="h-1/2 bg-red-100">
+  <img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGlicmFyeSUyMGJhY2tncm91bmR8ZW58MHx8MHx8fDA%3D">
+  </div>
+
+  <div class="h-1/2">
+    <div class="flex flex-row font-serif text-xl justify-center text-gray-800 pt-20">${variables.name || "Name"} 
+    ${variables.lastName || "Unknow"}</div>
+
+    <div class="flex flex-row underline text-gray-400 font-serif justify-center">${variables.role || "Role"}</div>
+    <div class="flex flex-row underline text-gray-400 font-serif justify-center">${variables.city || "City"}</div>
+    <div class="flex flex-row underline text-gray-400 font-serif justify-center">${variables.country || "Country"}</div>
+  </div>
+
+  <div class="absolute left-0 right-0 top-[35%] flex flex-row justify-center">
+    <img src="https://randomuser.me/api/portraits/men/44.jpg"
+    class="h=32 w-32 rounded-full border-8 border-white"/>
+    </div>
+
+    <div class="absolute left-full top-10 ml-px flex flex-col gap-[1px]">
+      ${
+        variables.twitter 
+        ? `<a href="https://twitter.com/${variables.twitter}" class="rounded bg-cyan-500 p-1.5 text-white"><i class="fa-brands fa-twitter"></i></a>
+        : ""
+      }
+      ${
+        variables.github
+        ? `<a href="https://github.com/${variables.github}" class="rounded bg-cyan-500 p-1.5 text-white"><i class="fa-brands fa-github"></i></a>
+        : ""
+      }  
+      ${
+        variables.linkedin
+        ? `<a href="https://linkedin.com/school/${variables.linkedin}" class="rounded bg-cyan-500 p-1.5 text-white"><i class="fa-brands fa-linkedin"></i></a>
+        : ""
+      }
+      ${
+        variables.instagram
+        ? `<a href="https://instagram.com/${4geeksacademy}" class="rounded bg-cyan-500 p-1.5 text-white"><i class="fa-brands fa-instagram"></i></a>
+        : ""
+      }
+    </div>
+
+</div>
     `;
 }
 
